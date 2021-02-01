@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PropertyAdminController">
+   <children>
+      <Label layoutX="27.0" layoutY="24.0" text="Submit Property Details" />
+      <SplitPane dividerPositions="0.31485148514851485" layoutX="20.0" layoutY="69.0" prefHeight="632.0" prefWidth="1093.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="602.0">
+               <children>
+                  <Label layoutX="16.0" layoutY="23.0" text="Property Type" />
+                  <TextField fx:id="propertyTypeField" layoutX="111.0" layoutY="19.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="56.0" text="No .of bedrooms" />
+                  <TextField fx:id="noBedroomField" layoutX="111.0" layoutY="52.0" />
+                  <Label layoutX="16.0" layoutY="82.0" text="Price (Monthly)  " />
+                  <TextField fx:id="priceMonthlyField" layoutX="111.0" layoutY="78.0" />
+                  <Label layoutX="13.0" layoutY="142.0" text="Property Area" />
+                  <TextField fx:id="areaField" layoutX="111.0" layoutY="138.0" />
+                  <Label layoutX="12.0" layoutY="112.0" text="Price (Weekly)" />
+                  <TextField fx:id="priceWeeklyField" layoutX="111.0" layoutY="108.0" />
+                  <Label layoutX="18.0" layoutY="170.0" text="AddressLine1" />
+                  <TextField fx:id="address1Field" layoutX="117.0" layoutY="166.0" />
+                  <Label layoutX="18.0" layoutY="197.0" prefHeight="17.0" prefWidth="71.0" text="AddressLine2" />
+                  <TextField fx:id="address2Field" layoutX="117.0" layoutY="193.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Label layoutX="18.0" layoutY="226.0" prefHeight="25.0" prefWidth="21.0" text="City" />
+                  <TextField fx:id="cityField" layoutX="116.0" layoutY="226.0" prefHeight="25.0" prefWidth="140.0" />
+                  <Label layoutX="11.0" layoutY="260.0" text="Post Code" />
+                  <TextField fx:id="postCodeField" layoutX="117.0" layoutY="256.0" prefHeight="17.0" prefWidth="149.0" />
+                  <Label layoutX="6.0" layoutY="295.0" prefHeight="3.0" prefWidth="76.0" text="Available Date" />
+                  <DatePicker fx:id="availableDatePicker" layoutX="118.0" layoutY="291.0" prefHeight="17.0" prefWidth="174.0" />
+                  <Label layoutX="12.0" layoutY="323.0" text="Agent" />
+                  <TextField fx:id="agentField" layoutX="118.0" layoutY="319.0" />
+                  <Label layoutX="11.0" layoutY="382.0" text="Date Advertised" />
+                  <DatePicker fx:id="dateAdvertisedPicker" layoutX="112.0" layoutY="378.0" />
+                  <Label layoutX="18.0" layoutY="350.0" text="Deposit" />
+                  <TextField fx:id="depositField" layoutX="117.0" layoutY="346.0" />
+                  <Label layoutX="13.0" layoutY="423.0" text="Description" />
+                  <TextArea fx:id="descriptionArea" layoutX="105.0" layoutY="407.0" prefHeight="67.0" prefWidth="200.0" />
+                  <Label layoutX="9.0" layoutY="493.0" text="Hire Status" />
+                  <RadioButton fx:id="avaiableRadioBtn" layoutX="105.0" layoutY="493.0" mnemonicParsing="false" text="Available" />
+                  <RadioButton fx:id="notAvaiableRadioBtn" layoutX="197.0" layoutY="493.0" mnemonicParsing="false" text="Not Available" />
+                  <Button fx:id="submitNewPropertyBtn" layoutX="247.0" layoutY="562.0" mnemonicParsing="false" onAction="#submitNewPropertyBtnListner" text="Submit" />
+                  <Label layoutX="24.0" layoutY="525.0" text="Rent or Buy" />
+                  <RadioButton fx:id="rentRadioBtn" layoutX="123.0" layoutY="524.0" mnemonicParsing="false" text="Rent" />
+                  <RadioButton fx:id="buyRadioBtn" layoutX="224.0" layoutY="526.0" mnemonicParsing="false" text="Buy" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="761.0">
+               <children>
+                  <TableView fx:id="PropertyAdminTbl" layoutX="-2.0" layoutY="26.0" prefHeight="200.0" prefWidth="736.0">
+                    <columns>
+                      <TableColumn fx:id="propertyIDColumn" prefWidth="25.0" text="ID" />
+                      <TableColumn fx:id="propertTypeColumn" prefWidth="45.0" text="Property Type" />
+                        <TableColumn fx:id="noOfBedroomColumn" prefWidth="56.0" text="No .of Bedroom" />
+                        <TableColumn fx:id="priceMonthlyColumn" prefWidth="42.0" text="Price (Monthly)" />
+                        <TableColumn fx:id="priceWeeklyColumn" prefWidth="35.0" text="Price(Weekly)" />
+                        <TableColumn fx:id="propertyAreaColumn" prefWidth="20.0" text="Property Area" />
+                        <TableColumn fx:id="addrs1Column" prefWidth="15.0" text="AddressLine 1" />
+                        <TableColumn fx:id="addrs2Column" prefWidth="64.0" text="AddressLine 2" />
+                        <TableColumn fx:id="cityColumn" prefWidth="26.0" text="City" />
+                        <TableColumn fx:id="postCodeColumn" prefWidth="47.0" text="Post Code" />
+                        <TableColumn fx:id="avabDatepickerColumn" prefWidth="89.0" text="Available Date" />
+                        <TableColumn fx:id="agentColumn" prefWidth="33.0" text="Agent" />
+                        <TableColumn fx:id="depositColumn" prefWidth="39.0" text="Deposit" />
+                        <TableColumn fx:id="dateAdvertColumn" prefWidth="47.0" text="Date Advertised" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="34.0" text="Description" />
+                        <TableColumn fx:id="hirStatusColumn" prefWidth="75.0" text="Hire Status" />
+                        <TableColumn fx:id="buyOrRentColumn" prefWidth="75.0" text="Buy/Rent" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="backToHomeBtn" layoutX="520.0" layoutY="577.0" mnemonicParsing="false" onAction="#backToHomeBtnListner" text="BackToHome" />
+                  <Button fx:id="deletePropertyBtn" layoutX="623.0" layoutY="577.0" mnemonicParsing="false" onAction="#deletePropertyBtnListner" text="Delete" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
